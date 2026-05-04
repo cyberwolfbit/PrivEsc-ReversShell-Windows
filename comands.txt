@@ -83,6 +83,12 @@ webcam_list → Lista cámaras disponibles.
 webcam_snap → Toma una foto con la webcam.
 webcam_stream → Transmite video en vivo desde la webcam.
 
+# Meterpreter Commands (Keylogger)
+
+keyscan_start → Inicia un registro temporal de las teclas pulsadas.
+keyscan_stop → Para por completo el registro de las teclas pulsadas hasta el momento.
+keyscan_dump → Ejecuta un archivo o en la misma terminal, muestra el registro de teclas pulsadas hasta el momento actual. (No hasta pausarlo).
+
 # Meterpreter Commands (Cleaning / Evasion)
 
 clearev → Borra registros de eventos de Windows.

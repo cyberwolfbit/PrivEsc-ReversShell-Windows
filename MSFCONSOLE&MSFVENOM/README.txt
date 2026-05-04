@@ -1,0 +1,3 @@
+# ¡¡¡Este es un archivo de aviso!!!
+
+Este directorio contiene documentación relacionada con payloads que han sido modificados y adaptados para su funcionamiento a fecha 04/05/2026. Esto se debe a que, aproximadamente hace dos meses, se publicó una actualización de seguridad en Windows que introdujo cambios destinados a dificultar la ejecución de ciertas técnicas utilizadas en entornos de pruebas de seguridad.
